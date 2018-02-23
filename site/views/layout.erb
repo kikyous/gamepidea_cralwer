@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title> <%= item ? item.name : '首页' %> - Terraria 中文 wiki </title>
+    <meta name="description" content="泰拉瑞亚(Terraria) 中文 wiki" />
+    <meta name="keywords" content="Terraria, Wiki, 泰拉瑞亚, 中文Wiki" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/bootstrap3-typeahead.min.js"></script>
+    <script src="/assets/app.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?abf04cd8a782b0d1891605d740754b8f";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/">泰拉瑞亚中文 wiki</a>
+
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <div class="search">
+        <input class="form-control mr-sm-2 typeahead" type="search" aria-label="Search" data-provide="typeahead" autocomplete="off">
+      </div>
+      <div class="page">
+        <% if item %>
+            <h1>
+                <%= item.name %>
+                <small> <%= item.en %> </small>
+            </h1>
+            <a href="https://terraria-zh.gamepedia.com/<%= item.name %>" target='_blank' class="badge badge-secondary" title='源页面' rel="nofollow">Gamepedia</a>
+            <span class="badge badge-secondary" title='构建时间'> <%= Time.now.strftime('%Y/%m/%d') %> </span>
+        <% end %>
+        <%= yield %>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          本网站内容来自
+          <a href='https://terraria-zh.gamepedia.com' rel="nofollow">terraria-zh.gamepedia.com</a> ，采用
+          <a class="external" rel="nofollow" href="//creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>授权。
+          <p> QQ交流群519761068 </p>
+          <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

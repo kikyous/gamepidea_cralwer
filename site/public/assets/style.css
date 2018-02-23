@@ -1,0 +1,145 @@
+body{
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    background: none;
+    font-weight: normal;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 0.5em;
+    padding-bottom: 0.17em;
+    border-bottom: 1px solid #a2a9b1;
+}
+h3{
+    font-size: 1.2em;
+}
+h2{
+    font-size: 1.5em;
+}
+h1{
+    font-size: 1.8em;
+}
+#toc, .toc, .mw-warning {
+    display: table;
+    border: 1px solid #AFCFE2;
+    background-color: white;
+    padding: 5px;
+    font-size: 95%;
+    border-radius: .3em;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+}
+#toc ul, .toc ul {
+    list-style-type: none;
+    list-style-image: none;
+    padding: 0;
+    margin: 0.3em 0;
+    margin-left: 0;
+}
+#toc ul ul, .toc ul ul {
+    margin: 0 0 0 2em;
+}
+.search{margin-top: 2em;}
+.page{
+    padding-top: 2em;
+}
+
+@media (max-width: 575.98px) {
+    table{
+        float: none !important;
+    }
+}
+table.terraria {
+    margin: 1em 1em 1em 0;
+    background: #F9F9F9;
+    border: 1px #AFCFE2 solid;
+    padding: 0.2em;
+    border-radius: .7em;
+    -moz-border-radius: .7em;
+    -webkit-border-radius: .7em;
+}
+table.inner {
+    border-collapse: collapse;
+    background: inherit;
+    width: 100%;
+}
+table.wikitable {
+    margin: 1em 0;
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+    color: #000;
+}
+table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
+    border: 1px solid #a2a9b1;
+    padding: 0.2em 0.4em;
+}
+.terraria th {
+    background: #E4F0F7;
+    color: black;
+    text-align: center;
+}
+.infobox {
+    border: 1px #AAA solid;
+    background-color: #f9f9f9;
+    color: black;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    padding: 0.2em;
+    float: right;
+}
+.footer {
+    line-height: 40px;
+    background-color: #f5f5f5;
+}
+div.thumbinner {
+    border: 1px solid #c8ccd1;
+    padding: 3px;
+    background-color: #f8f9fa;
+    font-size: 94%;
+    text-align: center;
+    overflow: hidden;
+}
+.thumbcaption {
+    border: 0;
+    line-height: 1.4em;
+    padding: 3px;
+    font-size: 94%;
+    text-align: left;
+}
+div.tright, div.floatright, table.floatright {
+    clear: right;
+    float: right;
+}
+div.tright {
+    margin: 0.5em 0 1.3em 1.4em;
+}
+table{
+    border-collapse: separate;
+}
+table.outer {
+    white-space: nowrap;
+}
+table tr.topline td {
+    border-top: 1px #AFCFE2 solid;
+}
+table.lined td {
+    border-bottom: 1px #AFCFE2 solid;
+}
+.typeahead.dropdown-menu{
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+}
+pre, .mw-code {
+    color: #000;
+    background-color: #f8f9fa;
+    border: 1px solid #eaecf0;
+    padding: 1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.infobox td, .infobox th {
+    vertical-align: top;
+}
