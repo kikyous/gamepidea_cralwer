@@ -12,8 +12,7 @@ require 'pry'
 set :database, "sqlite3:example.db"
 class Item < ActiveRecord::Base
   def en
-    name = en_name.split('gamepedia.com/')[1] if en_name
-    CGI.unescape(name).gsub('_', ' ') if name
+    CGI.unescape(en_name).gsub('_', ' ') if en_name
   end
 end
 
@@ -48,13 +47,6 @@ get '/*' do
   name = CGI.unescape(name)
   item = Item.find_by(name: name)
   MyRender.render(self, item)
-end
-
-post 'build_all' do
-  runner = ConcurrentRender.new
-  Item.all.each do |i|
-    runner.async.render(i)
-  end
 end
 
 class MyRender

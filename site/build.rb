@@ -21,7 +21,6 @@ class ConcurrentRender
       FileUtils.mkdir_p("build/#{dirname}")
     end
     File.open("build/#{file}.html", 'w'){|f|f.write(res)}
-    item.id
   end
 end
 class Builder
@@ -38,19 +37,10 @@ class Builder
   end
 
   def build_page
-    items = Item.all.to_a
-    EventMachine.run {
-        callback = proc do |id|
-          EventMachine.stop if id == 2819
-        end
-        items.each do |i|
-          operation = proc do
-            r = ConcurrentRender.new(Sinatra.new(Sinatra::Base).new!)
-            r.run(i)
-          end
-          EM.defer(operation, callback)
-        end
-    }
+    r = ConcurrentRender.new(Sinatra.new(Sinatra::Base).new!)
+    Item.find_each do |i|
+      r.run(i)
+    end
   end
 
   def build_index

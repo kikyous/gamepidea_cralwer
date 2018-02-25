@@ -10,7 +10,7 @@ class GamepediaSpiderMain(scrapy.Spider):
 
     def fetch_item(self, response):
         item = GamepediaScrapyItem()
-        item['name'] = response.css('#firstHeading::text').extract_first()
+        item['name'] = response.css('#firstHeading::text').extract_first().replace(' ', '_')
         item['content'] = response.css('#bodyContent').extract_first()
         url = response.css('.interwiki-en a::attr(href)').extract_first()
         en_name = None

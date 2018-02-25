@@ -1,11 +1,11 @@
-var is_chrome = /chrome/i.test( navigator.userAgent );
+var is_chrome = /chrome|firefox/i.test( navigator.userAgent );
 
 $.get("/index.json", function(data){
     var options = {
         source: data.data,
         fitToElement: true,
         theme: 'bootstrap4',
-        items: 'all',
+        items: 50,
         displayText: function(i){
             var en = i['en'];
             if(en)
